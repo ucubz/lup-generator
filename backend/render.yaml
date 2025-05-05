@@ -1,0 +1,11 @@
+# backend/render.yaml
+services:
+  - type: web
+    name: lup-generator-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18

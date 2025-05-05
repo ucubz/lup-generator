@@ -23,11 +23,20 @@ app.post("/generate", async (req, res) => {
 
   try {
     const templatePath = join(__dirname, "template", "template.docx");
+
+    if (!fs.existsSync(templatePath)) {
+      return res.status(404).send("Template file not found.");
+    }
+
     const templateBuffer = fs.readFileSync(templatePath);
 
     const buffer = await createReport({
       template: templateBuffer,
       data,
+      cmdDelimiter: ["{{", "}}"],
+      onTag: (tag) => {
+        console.log("Tag ditemukan:", tag); // Untuk debug
+      }
     });
 
     const outputPath = join(__dirname, "LHA.docx");
