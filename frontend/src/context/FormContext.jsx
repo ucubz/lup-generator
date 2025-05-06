@@ -1,6 +1,5 @@
 // src/context/FormContext.jsx
-import React from "react";
-import { createContext, useState } from "react";
+import React, { createContext, useState, useContext } from "react";
 
 const FormContext = createContext();
 
@@ -96,3 +95,4 @@ export const FormProvider = ({ children }) => {
   );
 };
 
+export const useFormContext = () => useContext(FormContext);
