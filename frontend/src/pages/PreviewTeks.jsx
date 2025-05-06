@@ -28,7 +28,7 @@ export default function PreviewTeks() {
 
   const submitForm = async () => {
     try {
-      const response = await fetch("http://localhost:3001/generate", {
+      const response = await fetch("https://lup-generator.onrender.com/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
