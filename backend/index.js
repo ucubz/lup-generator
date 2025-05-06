@@ -42,12 +42,18 @@ app.post("/generate", async (req, res) => {
     const outputPath = join(__dirname, "LHA.docx");
     fs.writeFileSync(outputPath, buffer);
 
-    res.download(outputPath, "LHA.docx", (err) => {
+    const timestamp = Date.now();
+    const outputFileName = `LHA_${timestamp}.docx`;
+    const outputPathWithIncrement = join(__dirname, outputFileName);
+
+    fs.writeFileSync(outputPathWithIncrement, buffer);
+
+    res.download(outputPathWithIncrement, outputFileName, (err) => {
       if (err) {
-        console.error("Download error:", err);
-        res.status(500).send("Gagal mengunduh file.");
+      console.error("Download error:", err);
+      res.status(500).send("Gagal mengunduh file.");
       } else {
-        fs.unlinkSync(outputPath); // hapus file setelah dikirim
+      fs.unlinkSync(outputPathWithIncrement); // hapus file setelah dikirim
       }
     });
   } catch (err) {

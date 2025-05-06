@@ -1,4 +1,6 @@
 // src/components/DatePicker.jsx
+import React from "react";
+
 export default function DatePicker({ label, name, value, onChange }) {
     return (
       <div className="mb-4">

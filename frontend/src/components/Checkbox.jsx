@@ -1,4 +1,6 @@
 // src/components/Checkbox.jsx
+import React from "react";
+
 export default function Checkbox({ label, name, checked, onChange }) {
     return (
       <div className="flex items-center mb-2">

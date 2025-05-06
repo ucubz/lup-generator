@@ -1,0 +1,84 @@
+Tags yang dibutuhkan
+seluruh tags ditulis manual, kecuali ditentukan lain
+
+Data utama FPP
+	{{nomor_fpp}}		//tiga angka. 
+	{{tahun_fpp}}		//tahun fpp terbit. 
+	{{tanggal_fpp}}		//tanggal dalam format mm dddd yyyy. pilihan tanggal dari menu?
+	{{pasal_pelanggaran}}	//pasal dan huruf dugaan pelanggaran. dari drop down
+	{{isi_pasal_pelanggaran}}	//isi pasal pelanggaran. prepopulated berdasarkan pilihan pasal pelanggaran.
+
+RESUME PENGADUAN
+Uraian singkat pengaduan
+	{{sumber_pengaduan}}	//sumber pengaduan. 
+	{{info_tambahan_sumber_pengaduan}}	//. kalau ada
+	{{resume_pengaduan}}		//tulis resume pengaduan. 
+
+Data terlapor
+	{{nama_terlapor_1}}		//nama terlapor 1. 
+	{{nip_terlapor_1}}		//NIP terlapor 1. 
+	{{jabatan_terlapor_1}}	//jabatan terlapor 1. 
+	{{unit_kerja_terlapor}}	//unit kerja terlapor 1.\
+	//data terlapor bisa ditambah apabila pada pengaduan ada lebih dari 1 terlapor. lanjutkan penomoran untuk terlapor 2 dst.
+
+Data pelapor
+	{{nama_pelapor}}		//nama pelapor.
+	{{alamat_pelapor}}		//alamat pelapor
+	{{telepon_pelapor}}		//nomor telepon pelapor
+	//field data pelapor bisa ditambah apabila dibutuhkan.
+
+ANALISIS PENGADUAN
+Isi pengaduan
+	{{centang_analisis_1}}	//centang untuk opsi pelanggaran kode etik
+	{{centang_analisis_2}}	//centang untuk opsi bukan pelanggaran kode etik
+	
+Kriteria pelanggaran
+	{{cka_1}}	//centang untuk opsi berdampak pada citra DJP
+	{{cka_2}}	//centang untuk opsi bernilai strategis
+	{{cka_3}}	//centang untuk opsi berskala nasional
+	{{dampak_pmk}}	//isi dampak sesuai pmk123. pilihan dropdown
+	
+Pembentukan tim pulbaket
+	{{centang_pulbaket_1}}		//centang untuk opsi ya bentuk tim pulbaket
+	{{centang_pulbaket_2}}		//centang untuk opsi tidak bentuk tim pulbaket
+	{{hasil_pulbaket_mandiri}}	//hasil pulbaket mandiri
+	{{nomor_uptp}}			//nomor UPTP
+	{{tangal_uptp}}			//tanggal UPTP
+	{{nomor_lhpbk}}			//nomor LHPBK jika sudah dapat. kalau belum, kasih 20 spasi
+	{{tanggal_lhpbk}}		//tanggal LHPBK jika sudah dapat. kalau belum, kasih 20 spasi
+
+Kriteria layak investigasi
+	{{cdi_1}}		//centang untuk opsi berdampak terhadap citra DJP di opsi naik investigasi
+	{{cdi_2}}		//centang untuk opsi bernilai strategis di opsi naik investigasi
+	{{cdi_3}}		//centang untuk opsi berskala nasional di opsi naik investigasi
+	{{dugaan_pelanggaran_inves}}	//penjabaran dugaan pelanggaran naik investigasi
+	{{dampak_naik_inves}}		//list dampak berdasarkan pmk123
+	
+Data tersangka
+	{{nama_tersangka_1}}		//nama tersangka 1
+	{{nip_tersangka_1}}		//NIP tersangka 1
+	{{jabatan_tersangka_1}}		//jabatan tersangka 1
+	{{unit_kerja_tersangka_1}}		//unit kerja tersangka 1
+	//filed data tersangka bisa ditambah apabila hasil analisis menunjukkan ada lebih dari 1 tersangka. lanjutkan penomoran untuk tersangka 2 dst.
+	{{tempat_pelanggaran_inves}}		//lokasi terjadinya pelanggaran yang naik investigasi
+	{{waktu_pelanggaran_inves}}		//waktu terjadinya pelanggaran yang naik investigasi
+	
+Data penerusan
+	{{centang_penerusan_1}}		//centang kalau diperlukan litdal
+	{{centang_penerusan_2}}		//centang kalau pemeriksaan atasan langsung
+	
+Usul tindak lanjut
+	{{utl_1}}		//centang untuk usul tindak lanjut investigasi
+	{{utl_2}}		//centang untuk usul penerusan tim litdal
+	{{utl_3}}		//centang untuk usul penerusan ke atsung
+	{{utl_4}}		//centang untuk usul penerusan ke unit terkait
+	{{utl_5}}		//centang untuk usul arsip
+	{{kanwil_litdal}}		//nama kanwil tujuan litdal
+	{{atsung_terlapor}}		//nama atsung terlapor
+	{{alasan_penerusan_unit}}		//alasan diteruskan ke unit terkait
+	{{unit_terkait}}		//nama unit terkait
+
+Data tetap
+	{{nama_kepala_seksi}}		//nama kepala seksi. drop down
+	{{pelaksana_analsisi}}		//nama pelaksana analisis.
+	{{nama_kasubdit}}		//nama kasubdit

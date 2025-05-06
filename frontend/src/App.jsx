@@ -1,4 +1,5 @@
 // src/App.jsx
+import React from "react"; // ✅ WAJIB untuk JSX
 import { Routes, Route } from "react-router-dom";
 import FormIsian from "./pages/FormIsian";
 import PreviewTeks from "./pages/PreviewTeks";

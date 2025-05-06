@@ -1,0 +1,38 @@
+Daftar Tag dalam Format {{...}}:
+
+- { nomor_fpp }
+- { tanggal_fpp }
+- { sumber_pengaduan }
+- { info_tambahan kalau ada }
+- { resume pengaduan }
+- { nama_terlapor }
+- { nip terlapor }
+- { jabatan terlapor }
+- { unit kerja terlapor }
+- { nama pelapor }
+- { alamat pelapor }
+- { telepon pelapor }
+- { dugaan_pelanggaran }
+- { dugaan pelanggaran }
+- { pasal dan huruf }
+- { isi pasal dan huruf }
+- { isi dampak sesuai pmk123 }
+- { hasil pulbaket mandiri }
+- { nomor uptp }
+- { tanggal uptp }
+- { nomor lhpbk }
+- { tanggal lhpbk }
+- { kesimpulan lhpbk }
+- { nama tersangka# }
+- { nip tersangka# }
+- { jabatan tersangka# }
+- { unit kerja tersangka# }
+- { dugaan pelanggaran naik inves }
+- { tempat dan waktu pelanggaran naik inves }
+- { nama kanwil litdal }
+- { atsung terlapor }
+- { alasan penerusan unit terkait }
+- { nama unit terkait }
+- { kepala seksi }
+- { pelaksana analisis }
+- { kasubdit }
