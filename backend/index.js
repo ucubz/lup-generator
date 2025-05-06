@@ -44,7 +44,7 @@ app.post("/generate", async (req, res) => {
 
     const timestamp = Date.now();
     const outputFileName = `LHA_${timestamp}.docx`;
-    const outputPathWithIncrement = join(__dirname, outputFileName);
+    const outputPathWithIncrement = join("/tmp", outputFileName);
 
     fs.writeFileSync(outputPathWithIncrement, buffer);
 
