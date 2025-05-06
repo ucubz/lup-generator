@@ -1,3 +1,4 @@
+// backend/index.js (atau server.js)
 import express from "express";
 import cors from "cors";
 import fs from "fs";
@@ -22,9 +23,12 @@ app.post("/generate", async (req, res) => {
   const data = req.body;
 
   try {
+    console.log(">> Memulai generate dokumen");
+
     const templatePath = join(__dirname, "template", "template.docx");
 
     if (!fs.existsSync(templatePath)) {
+      console.error(">> Template tidak ditemukan:", templatePath);
       return res.status(404).send("Template file not found.");
     }
 
@@ -35,33 +39,33 @@ app.post("/generate", async (req, res) => {
       data,
       cmdDelimiter: ["{{", "}}"],
       onTag: (tag) => {
-        console.log("Tag ditemukan:", tag); // Untuk debug
-      }
+        console.log(">> Tag ditemukan:", tag);
+      },
     });
 
-    const outputPath = join(__dirname, "LHA.docx");
+    const outputFileName = `LHA_${Date.now()}.docx`;
+    const outputPath = join("/tmp", outputFileName); // wajib di /tmp untuk Render
+
     fs.writeFileSync(outputPath, buffer);
+    console.log(">> Dokumen berhasil dibuat:", outputPath);
 
-    const timestamp = Date.now();
-    const outputFileName = `LHA_${timestamp}.docx`;
-    const outputPathWithIncrement = join("/tmp", outputFileName);
-
-    fs.writeFileSync(outputPathWithIncrement, buffer);
-
-    res.download(outputPathWithIncrement, outputFileName, (err) => {
+    res.download(outputPath, outputFileName, (err) => {
       if (err) {
-      console.error("Download error:", err);
-      res.status(500).send("Gagal mengunduh file.");
+        console.error(">> Gagal saat mengirim file:", err);
+        if (!res.headersSent) {
+          res.status(500).send("Gagal mengunduh file.");
+        }
       } else {
-      fs.unlinkSync(outputPathWithIncrement); // hapus file setelah dikirim
+        console.log(">> File berhasil dikirim:", outputFileName);
+        fs.unlinkSync(outputPath);
       }
     });
   } catch (err) {
-    console.error("Error saat generate:", err);
+    console.error(">> Error saat generate:", err);
     res.status(500).send("Gagal generate file.");
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
+  console.log(`Server listening on port ${PORT}`);
 });
